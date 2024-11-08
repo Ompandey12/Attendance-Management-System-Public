@@ -1,0 +1,40 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container active" id="loginPage">
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+        <h3>TDS Attendance Management System</h3>
+        <br>
+        <input type="password" id="passwordInput" placeholder="Enter password" />
+        <button class="button" onclick="validateLogin()">Login</button>
+    </div>
+
+    <div class="main-container" id="mainPage">
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+        <h2>TDS Attendance Management System</h2>
+        <br>
+        <select id="locationDropdown" class="dropdown" onchange="populateSecondDropdown()">
+            <option value="" disabled selected>Select your Division</option>
+            <option value="BHELUPUR">BHELUPUR</option>
+            <option value="CHETMANI">CHETMANI</option>
+        </select>
+        <select id="subLocationDropdown" class="dropdown" disabled>
+            <option value="" disabled selected>Select a sub-location</option>
+        </select>
+        <button onclick="navigateToLocation()" class="button">Go</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
