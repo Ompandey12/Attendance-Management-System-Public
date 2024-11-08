@@ -3,7 +3,7 @@ let attempts = 0;
 const maxAttempts = 3;
 
 // Fetch configuration data from server
-fetch('http://localhost:3000/api/config')
+fetch('/api/config')
     .then(response => response.json())
     .then(data => {
         config = data;
