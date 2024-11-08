@@ -1,11 +1,8 @@
 const express = require('express');
+const dotenv = require('dotenv');
 
-import { config } from 'dotenv';
-
-config();
-
+dotenv.config();
 const app = express();
-
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
@@ -14,7 +11,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Endpoint to get environment variables
 app.get('/api/config', (req, res) => {
     res.json({
         loginPassword: process.env.LOGIN_PASSWORD,
@@ -35,9 +31,12 @@ app.get('/api/config', (req, res) => {
                 KARUNDI: process.env.CHETMANI_KARUNDI_URL,
                 RAMNAGAR: process.env.CHETMANI_RAMNAGAR_URL,
                 RAMNAGAR_NEW: process.env.CHETMANI_RAMNAGAR_NEW_URL,
+                // Add other sub-locations similarly
             }
         }
     });
 });
+
+
 
 export default app;
